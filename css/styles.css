@@ -295,6 +295,38 @@ h2.block-title::before{
 ul.concept-list{ padding-left: 1.2rem; margin: 0; }
 ul.concept-list li{ margin-bottom: 0.85rem; }
 
+.section-block{ margin-bottom: 1.6rem; }
+.section-heading{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: var(--bottle);
+  margin: 0 0 0.5rem;
+}
+.section-body{
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.keylist-box{
+  border: 1px solid var(--brass);
+  background: rgba(156,122,60,0.08);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.keylist-title{
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.6rem;
+}
+.keylist-items{ margin: 0; padding-left: 1.3rem; }
+.keylist-items li{ margin-bottom: 0.5rem; font-size: 0.97rem; }
+
 .term-grid{
   display:grid;
   gap: 0.9rem;
