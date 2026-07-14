@@ -169,9 +169,25 @@
       html += `<div class="warning-box"><span class="label">Context note</span>${s.contentNote}</div>`;
     }
 
-    html += `<h2 class="block-title">Key concepts</h2><ul class="concept-list">`;
-    html += s.concepts.map((c) => `<li>${c}</li>`).join("");
-    html += `</ul>`;
+    if (s.sections && s.sections.length) {
+      html += `<h2 class="block-title">In-depth notes</h2>`;
+      html += s.sections.map((sec) => `
+        <div class="section-block">
+          <h3 class="section-heading">${sec.heading}</h3>
+          <p class="section-body">${sec.body}</p>
+        </div>
+      `).join("");
+    }
+
+    if (s.keyLists && s.keyLists.length) {
+      html += s.keyLists.map((kl) => {
+        const tag = kl.ordered ? "ol" : "ul";
+        return `<div class="keylist-box">
+          <div class="keylist-title">${kl.title}</div>
+          <${tag} class="keylist-items">${kl.items.map((it) => `<li>${it}</li>`).join("")}</${tag}>
+        </div>`;
+      }).join("");
+    }
 
     if (s.terms && s.terms.length) {
       html += `<h2 class="block-title">Key terms</h2><div class="term-grid">`;
